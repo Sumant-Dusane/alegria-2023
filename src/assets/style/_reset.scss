@@ -1,0 +1,21 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+*::before, *::after {
+    z-index: -1;
+    pointer-events: none;
+}
+
+html, body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $fontFamily;
+    font-size: $fontSize-base;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+}
