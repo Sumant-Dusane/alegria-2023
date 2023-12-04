@@ -1,0 +1,96 @@
+@import "../assets/style/variables";
+@import "../assets/style/sudo";
+@import "../assets/style/keyframes";
+@import "../assets/style/flex";
+
+.landing {
+    @include flex(row, flex-end, center, 0);
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    // background: radial-gradient(50% 50% at 50% 50%, $purple 0%, $blue 100%);
+    
+    &::before {
+        @include sudo-fill("", absolute, 0, 0, unset, 0);
+        height: 67vh;
+        background: url('../assets/images/back-bg.svg') no-repeat center top;
+        background-size: cover;
+        z-index: 0;
+    }
+
+    &::after {
+        @include sudo-fill("", absolute, unset, 0, -14%, 0);
+        height: 60vh;
+        background: url('../assets/images/front-road.svg') no-repeat center bottom;
+        background-size: cover;
+        z-index: 2;
+    }
+
+    .planets {
+        @include flex(row, center, flex-start, 0);
+        height: 43vh;
+        width: 100%;
+        position: relative;
+
+        .planet {
+            @include element-position(absolute, unset, 0, 0, unset);
+            cursor: pointer;
+            width: auto;
+            animation: revolve 50000ms infinite linear;
+            border-radius: $borderRadius-rounded;
+            overflow: hidden;
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+
+            &:nth-child(1) {
+                height: 75%;
+                left: 27%;
+                top: -20%;
+                right: unset;
+                z-index: 6;
+            }
+
+            &:nth-child(2) {
+                height: 35%;
+                left: unset;
+                top: -4%;
+                right: 38%;
+                animation-delay: 5000ms;
+                z-index: 5;
+            }
+
+            &:nth-child(3) {
+                height: 15%;
+                left: 45%;
+                top: 4%;
+                right: unset;
+                animation-delay: 2500ms;
+                z-index: 4;
+            }
+
+            &:nth-child(4) {
+                height: 5%;
+                left: unset;
+                top: 5%;
+                right: 48%;
+                animation-delay: 1000ms;
+                z-index: 30;
+            }
+        }
+    }
+
+    .navigate-btn {
+        @include element-position(absolute, unset, unset, 20px, unset);
+        width: auto;
+        height: 100px;
+        z-index: 10;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
