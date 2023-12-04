@@ -9,6 +9,10 @@
     z-index: 99;
     padding: 0 $spacer2x;
 
+    &._active{
+        background-color: #8c80809a;
+    }
+
     &__navs {
         @include flex(row, center, center, $spacer2x);
         color: $white;

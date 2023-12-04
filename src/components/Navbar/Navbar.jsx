@@ -6,7 +6,7 @@ import "./navbar.scss";
 
 const Navbar = () => {
     return (
-        <nav className="navbar">
+        <nav className="navbar _active">
             <Link href='/'><Image src={Logo} alt="Alegria 2023" /></Link>
 
             <ul className="navbar__navs">

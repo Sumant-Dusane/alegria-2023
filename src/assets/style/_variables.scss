@@ -1,3 +1,27 @@
+// variables
+$white-color: #fff;
+$primary-color: #0A5BC4; 
+$secondary-color: #0EAE19;
+$heading-color: #00275A;
+$light-green: #0FBEBF;
+$text-color: #5c6668;
+$light-bg: #F1F7FE;
+$light-blue-bg:#cef0f1;
+
+// breakpoints
+$too-small-mobile: 322px;
+$mid-small-mobile:340px;
+$small-mobile: 376px;
+$mid-mobile:500px;
+$mobile: 576px;
+$small-tab: 768px;
+$big-tab: 992px;
+$small-desktop: 1024px;
+$desktop: 1200px;
+$large-container: 1400px;
+$mid-desktop: 1450px;
+$large-desktop: 1700px;
+
 @font-face {
     font-family: SpaceMono;
     src: url('../fonts/SpaceMono-Regular.ttf');
