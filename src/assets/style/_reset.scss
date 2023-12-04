@@ -18,4 +18,23 @@ body {
     font-size: $fontSize-base;
     text-rendering: geometricPrecision;
     -webkit-font-smoothing: antialiased;
+    height: 100vh;
+    overflow: hidden;
+}
+
+button {
+    cursor: pointer;
+    transition: $transitionGeneric;
+    background: transparent;
+    border: 0;
+}
+
+a {
+    color: $white;
+    text-decoration: none;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
 }
