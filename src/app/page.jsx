@@ -2,16 +2,13 @@ import Image from "next/image";
 import "./page.scss";
 import { Planets } from "@/utils/planets";
 import ArrowBtn from "@/assets/images/arrow.svg";
-import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="landing">
       <div className="planets">
-        <div className="planet">
-          {/* <Link href="/universe/[id]" as="/universe/marvel"> */}
-            <Image src={Planets.Planet1} alt="Planet 1" />
-          {/* </Link> */}
+        <div className="planet" >
+          <Image src={Planets.Planet1} alt="Planet 1" />
         </div>
         <div className="planet">
           <Image src={Planets.Planet2} alt="Planet 2" />
