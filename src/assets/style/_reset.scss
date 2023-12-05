@@ -7,6 +7,25 @@
     pointer-events: none;
 }
 
+* {
+    &::-webkit-scrollbar {
+        width: 5px;
+        border-radius: $borderRadius-regular;
+    }
+      
+    &::-webkit-scrollbar-track {
+        background: $blue;
+    }
+      
+    &::-webkit-scrollbar-thumb {
+        background: $purple;
+    }
+      
+    &::-webkit-scrollbar-thumb:hover {
+        background: $purple;
+    }
+}
+
 html, body {
     font-family: sans-serif;
     margin: 0;
@@ -19,7 +38,7 @@ body {
     text-rendering: geometricPrecision;
     -webkit-font-smoothing: antialiased;
     height: 100vh;
-    // overflow: hidden;
+    overflow: hidden;
 }
 
 button {

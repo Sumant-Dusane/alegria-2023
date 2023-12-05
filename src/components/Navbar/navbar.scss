@@ -1,5 +1,6 @@
 @import "./../../assets/style/variables";
 @import "./../../assets/style/sudo";
+@import "./../../assets/style/keyframes";
 @import "./../../assets/style/flex";
 
 .navbar {
@@ -8,10 +9,6 @@
     height: 80px;
     z-index: 99;
     padding: 0 $spacer2x;
-
-    &._active{
-        background-color: #8c80809a;
-    }
 
     &__navs {
         @include flex(row, center, center, $spacer2x);
@@ -35,6 +32,12 @@
             position: relative;
             height: 100%;
             width: 100%;
+
+            img {
+                border-radius: $borderRadius-rounded;
+                overflow: hidden;
+                animation: revolve 50000ms infinite linear;
+            }
 
             &::before {
                 @include sudo-fill("", absolute, unset, -16px, 16px, unset);
@@ -78,6 +81,13 @@
             }
 
             &.show {
+                max-height: 100rem;
+                overflow-y: auto;
+            }
+        }
+
+        &:hover, &:focus-visible {
+            .navbar__planet-selector__content {
                 max-height: 100rem;
                 overflow-y: auto;
             }
