@@ -12,36 +12,44 @@ export default function Home() {
   gsap.registerPlugin(ScrollTrigger)
 
   useEffect(() => {
+    let scrollPos = 0;
+
     return ()=>{
        gsap.to('.landing', {
       scrollTrigger: {
         trigger: '.landing',
         start: 'top top',
-        end: 'bottom top',
+        end: 'bottom+=4000 top-=3000',
+        markers:true,
         pin: true,
         scrub: true,
-      },
-    });
+          onUpdate: (self) => {
+          console.log('this is scroll postiion:', self.scroll());
+          scrollPos = self.scroll();
+        },
+        },
+      })
+  
 
-    }
-  }, []);
+       const boxes = gsap.utils.toArray('.planet');
 
-  useEffect(() => {
-     const boxes = gsap.utils.toArray('.planet');
-
-     boxes.forEach(box => {
+     boxes.forEach((box,i) => {
      gsap.to(box, {
          scale: 1.5,
-         x: '-100%',
+         x: i%2==0 ? `-100%`:`100%`,
+          
          scrollTrigger: {
+           // x: i%2 == 0? -(300 *i) : (300*i),
            trigger: box,
            scrub: true,
          },
        });
      });
-   }, []);
-  
+    }
+  }, []);
+
   return (
+    <>
     <div className="landing">
         <div className="planets">
               <div className="planet">
@@ -62,5 +70,6 @@ export default function Home() {
           <Image src={ArrowBtn} />
         </button>
     </div>
+    </>
   )
 }
