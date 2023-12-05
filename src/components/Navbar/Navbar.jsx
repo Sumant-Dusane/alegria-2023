@@ -16,7 +16,7 @@ const Navbar = ({ currentPlanet, setCurrentPlanet }) => {
     }
 
     return (
-        <nav className="navbar _active">
+        <nav className="navbar">
             <Link href='/'><Image src={Logo} alt="Alegria 2023" /></Link>
 
             <ul className="navbar__navs">
