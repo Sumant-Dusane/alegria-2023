@@ -1,0 +1,25 @@
+@import "../../assets/style/variables";
+
+.landing {
+    height: 100%;
+
+    .universe {
+        border-top: 1px solid $stroke;
+        text-align: center;
+
+        &__title {
+            span {
+                color: $purple;
+                background-color: $wheat;
+            }
+        }
+
+        &__about {
+            margin: $spacer2x auto;
+            padding: $spacer3x;
+            border-radius: $borderRadius-regular;
+            background-color: $stroke;
+            width: 50%;
+        }
+    }
+}
