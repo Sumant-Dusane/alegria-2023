@@ -1,52 +1,37 @@
-import Image from "next/image";
-import "./page.scss";
-import { Planets } from "@/utils/planets";
-import ArrowBtn from "@/assets/images/arrow.svg";
+"use client"
 
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { Timeline, Tween } from "react-gsap";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+import { Planets } from '@/utils/planets';
 
 export default function Home() {
+  const landing = useRef(null);
+
+  useEffect(() => {
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({antialias: true});
+    const geometry = new THREE.SphereGeometry(15, 64, 32);
+    const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+    const sphere = new THREE.Mesh(geometry, material);
+
+    camera.position.z = 100;
+    camera.position.x = 0;
+    scene.add(sphere);
+
+    renderer.setClearColor('#000000');
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    function animate() {
+      requestAnimationFrame( animate );
+      renderer.render( scene, camera );
+    }
+    animate();
+
+    landing.current.appendChild(renderer.domElement);
+  }, []);
+
   return (
-    <div className="landing">
-      <ScrollTrigger
-        trigger="trigger"
-        start="top center"
-        end="100vh center"
-        scrub={0.5}
-        marker={true}
-        pin={true}
-      >
-        <div className="planets">
-          <Timeline>
-            <Tween>
-              <div className="planet">
-                <Image src={Planets.Planet1} alt="Planet 1" />
-              </div>
-            </Tween>
-            <Tween>
-              <div className="planet">
-                <Image src={Planets.Planet2} alt="Planet 2" />
-              </div>
-            </Tween>
-            <Tween>
-              <div className="planet">
-                <Image src={Planets.Planet3} alt="Planet 3" />
-              </div>
-            </Tween>
-            <Tween>
-              <div className="planet">
-                <Image src={Planets.Planet4} alt="Planet 4" />
-              </div>
-            </Tween>
-          </Timeline>
-        </div>
-        <button className="navigate-btn">
-          <Image src={ArrowBtn} />
-        </button>
-      </ScrollTrigger>
-    </div>
+    <div className='landing' ref={landing} style={{height: '100vh', width: '100vw'}}></div>
   )
 }
