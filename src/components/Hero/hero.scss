@@ -1,8 +1,23 @@
 @import "../../assets/style/variables";
+@import "../../assets/style/sudo";
 
 .hero {
     position: relative;
     height: 100vh;
     width: 100%;
     overflow: hidden;
+    
+    canvas {
+        @include element-position(absolute, 0, 0, 0, 0);
+        z-index: 500;
+    }
+    
+    &__content {
+        @include element-position(absolute, 0, 0, 0, 0);
+        height: 100%;
+        width: 100%;
+        margin: $spacer3x;
+        padding-top: 80px;
+        z-index: 1;
+    }
 }
