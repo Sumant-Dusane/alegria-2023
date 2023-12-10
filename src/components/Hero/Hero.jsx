@@ -32,45 +32,47 @@ const Hero = ({ landingGsapTimeline, }) => {
         const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: heroRef.current });
         const camera = new THREE.PerspectiveCamera(75, deviceWidth / deviceHeight, 0.000001, 100);
 
-        const textTextureArr = [
-            'https://threejs.org/examples/textures/cube/SwedishRoyalCastle/px.jpg',
-            'https://threejs.org/examples/textures/cube/SwedishRoyalCastle/nx.jpg',
-            'https://threejs.org/examples/textures/cube/SwedishRoyalCastle/py.jpg',
-            'https://threejs.org/examples/textures/cube/SwedishRoyalCastle/pz.jpg',
-            'https://threejs.org/examples/textures/cube/SwedishRoyalCastle/nz.jpg'
-        ];
-        const pixelT = new THREE.CubeTextureLoader().load(textTextureArr);
-        scene.background = pixelT;
-
         const controls = new OrbitControls(camera, heroRef.current);
-        controls.enableDamping = false;
+        controls.enableDamping = true;
         controls.enablePan = false;
-        controls.zoomSpeed = .15;
+        controls.zoomSpeed = .25;
         controls.maxDistance = 10;
         controls.enableRotate = false;
 
         camera.position.x = 0;
         camera.position.y = 0;
-        camera.position.z = 20;
+        camera.position.z = 10;
         camera.lookAt(scene.position);
 
-        const planetAGeometry = new THREE.SphereGeometry(.5, 100, 100);
+        const planetAGeometry = new THREE.SphereGeometry(.33, 100, 100);
         const planetAMaterial = new THREE.MeshBasicMaterial({ color: 'gray', transparent: false });
         const planetAMesh = new THREE.Mesh(planetAGeometry, planetAMaterial);
         planetAMesh.position.z = 8
         scene.add(planetAMesh);
 
-        const planetBGeometry = new THREE.SphereGeometry(.5, 100, 100);
+        const planetBGeometry = new THREE.SphereGeometry(.33, 100, 100);
         const planetBMaterial = new THREE.MeshBasicMaterial({ color: 'blue', transparent: false });
         const planetBMesh = new THREE.Mesh(planetBGeometry, planetBMaterial);
-        planetBMesh.position.z = 5
+        planetBMesh.position.z = 6
         scene.add(planetBMesh);
 
-        const planetCGeometry = new THREE.SphereGeometry(.5, 100, 100);
+        const planetCGeometry = new THREE.SphereGeometry(.33, 100, 100);
         const planetCMaterial = new THREE.MeshBasicMaterial({ color: 'orange', transparent: false });
         const planetCMesh = new THREE.Mesh(planetCGeometry, planetCMaterial);
-        planetCMesh.position.z = 2
+        planetCMesh.position.z = 4
         scene.add(planetCMesh);
+
+        const planetDGeometry = new THREE.SphereGeometry(.33, 100, 100);
+        const planetDMaterial = new THREE.MeshBasicMaterial({ color: 'orange', transparent: false });
+        const planetDMesh = new THREE.Mesh(planetDGeometry, planetDMaterial);
+        planetDMesh.position.z = 2
+        scene.add(planetDMesh);
+
+        const planetEGeometry = new THREE.SphereGeometry(.33, 100, 100);
+        const planetEMaterial = new THREE.MeshBasicMaterial({ color: 'orange', transparent: false });
+        const planetEMesh = new THREE.Mesh(planetEGeometry, planetEMaterial);
+        planetEMesh.position.z = 0
+        scene.add(planetEMesh);
 
 
         const particlesGeometry = new THREE.BufferGeometry;
@@ -94,6 +96,8 @@ const Hero = ({ landingGsapTimeline, }) => {
             const AFromCenter = planetAMesh.position.z;
             const BFromCenter = planetBMesh.position.z;
             const CFromCenter = planetCMesh.position.z;
+            const DFromCenter = planetDMesh.position.z;
+            const EFromCenter = planetEMesh.position.z;
 
             if (distFromCenter >= AFromCenter) {
                 changeUniverse(1)
@@ -101,7 +105,11 @@ const Hero = ({ landingGsapTimeline, }) => {
                 changeUniverse(2)
             } else if (distFromCenter >= CFromCenter && distFromCenter < BFromCenter) {
                 changeUniverse(3)
-            }
+            } else if (distFromCenter >= DFromCenter && distFromCenter < CFromCenter) {
+                changeUniverse(4)
+            } else if (distFromCenter >= EFromCenter && distFromCenter < DFromCenter) {
+                changeUniverse(5)
+            } 
         }
         controls.addEventListener('change', handleGlobalState)
 
