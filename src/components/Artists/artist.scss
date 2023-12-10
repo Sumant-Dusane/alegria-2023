@@ -13,8 +13,9 @@
     width: 100%;
 
     &__title {
-        width: max-content;
         @include element-position(absolute, 6.25rem, unset, unset, 1rem);
+        width: max-content;
+        transform: translateX(-100%);
 
         &--tagline {
             @include element-position(absolute, 90%, -2rem, unset, unset);
@@ -31,6 +32,7 @@
     &__about {
         @include element-position(absolute, 50%, 1rem, unset, unset);
         transform: translateY(-50%);
+        transform: translateX(100%);
         width: 25%;
     }
 
@@ -38,7 +40,6 @@
         @include element-position(absolute, 40%, unset, 0, 45%);
         transform-origin: bottom;
         object-fit: contain;
-        transform: translateX(-50%);
 
         img {
             position: relative;

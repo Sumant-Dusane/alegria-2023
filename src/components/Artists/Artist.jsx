@@ -4,14 +4,51 @@ import "./artist.scss";
 import Yoyo from "../../assets/images/honey-singh.png";
 import Image from "next/image";
 import { useEffect } from "react";
-import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
 
-const Artist = () => {
+const Artist = ({ landingGsapTimeline }) => {
+  const ArtistScrollTriggerConfig = {
+    trigger: '.artist',
+    start: 'top center',
+    scrub: true
+  }
+
+  const ArtistCarouselScrollTriggerConfig = {
+    trigger: '.artist',
+    start: 'center+=100 center',
+    end: 'bottom center+=100',
+    scrub: true,
+    markers: true,
+    pin: true
+  }
+
   useEffect(() => {
-    
+    landingGsapTimeline.to('.artist__title', {
+      x: '100%',
+      scrollTrigger: ArtistScrollTriggerConfig
+    });
+
+    landingGsapTimeline.to('.artist__about', {
+      x: '-100%',
+      scrollTrigger: ArtistScrollTriggerConfig
+    });
+
+    landingGsapTimeline.fromTo('.artist__image', {
+      x: '-50%',
+      y: '100%',
+      scrollTrigger: ArtistScrollTriggerConfig
+    }, {
+      x: '-50%',
+      y: '-80%',
+      scrollTrigger: ArtistScrollTriggerConfig
+    });
+
+    // landingGsapTimeline.to('.artist__image', {
+    //   x: '-1000%',
+    //   scrollTrigger: ArtistCarouselScrollTriggerConfig
+    // });
   }, []);
+
   return (
     <div className="artists">
       <div className="artist">

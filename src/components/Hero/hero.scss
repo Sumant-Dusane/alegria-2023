@@ -8,7 +8,7 @@
     overflow: hidden;
     
     canvas {
-        @include element-position(absolute, 0, 0, 0, 0);
+        @include element-position(fixed, 0, 0, 0, 0);
         z-index: 1;
     }
     
