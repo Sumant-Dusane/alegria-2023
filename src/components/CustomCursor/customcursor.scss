@@ -1,0 +1,11 @@
+@import "../../assets/style/variables";
+@import "../../assets/style/sudo";
+
+.custom-cursor {
+    @include element-position(absolute, 0, unset, unset, 0);
+    height: 150px;
+    width: 150px;
+    background: url('../../assets/images/cursor.png') no-repeat center center;
+    background-size: contain;
+    z-index: 99;
+}

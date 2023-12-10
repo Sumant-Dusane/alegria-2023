@@ -2,13 +2,14 @@
 @import "../../assets/style/sudo";
 
 .hero {
+    cursor: none;
     position: relative;
     height: 100vh;
     width: 100%;
     overflow: hidden;
     
     canvas {
-        @include element-position(fixed, 0, 0, 0, 0);
+        @include element-position(absolute, 0, 0, 0, 0);
         z-index: 1;
     }
     

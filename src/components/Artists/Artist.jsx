@@ -43,6 +43,11 @@ const Artist = ({ landingGsapTimeline }) => {
       scrollTrigger: ArtistScrollTriggerConfig
     });
 
+    landingGsapTimeline.to('.artists__title', {
+      x: '-100%',
+      scrollTrigger: ArtistScrollTriggerConfig
+    });
+
     // landingGsapTimeline.to('.artist__image', {
     //   x: '-1000%',
     //   scrollTrigger: ArtistCarouselScrollTriggerConfig
@@ -51,6 +56,7 @@ const Artist = ({ landingGsapTimeline }) => {
 
   return (
     <div className="artists">
+      <div className="artists__title h1">Artist</div>
       <div className="artist">
         <div className="artist__title h1">
           YO YO <br /> HONEY SINGH

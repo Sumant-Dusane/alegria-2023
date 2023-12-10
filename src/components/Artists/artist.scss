@@ -3,79 +3,92 @@
 @import "../../assets/style/sudo";
 
 .artists {
-    overflow: hidden;
-}
-
-.artist {
     position: relative;
-    height: 100vh;
     overflow: hidden;
-    width: 100%;
 
     &__title {
-        @include element-position(absolute, 6.25rem, unset, unset, 1rem);
+        @include element-position(absolute, 32px, 0, unset, unset);
         width: max-content;
-        transform: translateX(-100%);
-
-        &--tagline {
-            @include element-position(absolute, 90%, -2rem, unset, unset);
-            display: block;
-            color: $purple;
-            background-color: $wheat;
-            padding: $spacer1_2 $spacer;
-            font-size: $fontSize-medium;
-            transform: rotate(-10deg);
-        }
-        
-    }
-
-    &__about {
-        @include element-position(absolute, 50%, 1rem, unset, unset);
-        transform: translateY(-50%);
+        font-weight: bold;
+        background-color: $wheat;
+        color: $purple;
+        padding: $spacer1_2;
         transform: translateX(100%);
-        width: 25%;
     }
 
-    &__image {
-        @include element-position(absolute, 40%, unset, 0, 45%);
-        transform-origin: bottom;
-        object-fit: contain;
-
-        img {
-            position: relative;
-            height: 100%;
+    .artist {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+        width: 100%;
+    
+        &__title {
+            @include element-position(absolute, 6.25rem, unset, unset, 1rem);
             width: max-content;
+            transform: translateX(-100%);
+    
+            &--tagline {
+                @include element-position(absolute, 90%, -2rem, unset, unset);
+                display: block;
+                color: $purple;
+                background-color: $wheat;
+                padding: $spacer1_2 $spacer;
+                font-size: $fontSize-medium;
+                transform: rotate(-10deg);
+            }
+            
+        }
+    
+        &__about {
+            @include element-position(absolute, 50%, 1rem, unset, unset);
+            transform: translateY(-50%);
+            transform: translateX(100%);
+            width: 25%;
+        }
+    
+        &__image {
+            @include element-position(absolute, 40%, unset, 0, 45%);
             transform-origin: bottom;
-            z-index: 1;
+            object-fit: contain;
+            z-index: 3;
+    
+            img {
+                position: relative;
+                height: 100%;
+                width: max-content;
+                transform-origin: bottom;
+                z-index: 1;
+            }
+    
+            &__ring {
+                @include element-position(absolute, unset, unset, -10rem, 45%);
+                transform: translateX(-50%);
+                border: 65px solid $white;
+                border-radius: $borderRadius-rounded;
+                height: 100%;
+                width: 600px;
+                z-index: 0;
+            }
+        }
+    
+        &__prev, &__next {
+            @include element-position(absolute, unset, unset, 0, unset);
+            @include flex(row, center, center, $spacer);
+            padding: $spacer;
+        }
+    
+        &__prev {
+            flex-direction: row-reverse;
+            left: 0;
+    
+            svg {
+                rotate: 180deg;
+            }
+        }
+    
+        &__next {
+            right: 0;
         }
 
-        &__ring {
-            @include element-position(absolute, unset, unset, -10rem, 45%);
-            transform: translateX(-50%);
-            border: 65px solid $white;
-            border-radius: $borderRadius-rounded;
-            height: 100%;
-            width: 600px;
-            z-index: 0;
-        }
-    }
-
-    &__prev, &__next {
-        @include element-position(absolute, unset, unset, 0, unset);
-        @include flex(row, center, center, $spacer);
-        padding: $spacer;
-    }
-
-    &__prev {
-        flex-direction: row-reverse;
-        left: 0;
-
-        svg {
-            rotate: 180deg;
-        }
-    }
-
-    &__next {
-        right: 0;
     }
 }
