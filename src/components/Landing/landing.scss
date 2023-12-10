@@ -4,8 +4,10 @@
     height: 100%;
 
     .universe {
+        height: 100vh;
         border-top: 1px solid $stroke;
         text-align: center;
+        padding-top: calc(80px + $spacer2x);
 
         &__title {
             span {
@@ -21,8 +23,5 @@
             background-color: $stroke;
             width: 50%;
         }
-    }
-    audio {
-        z-index: -1;
     }
 }

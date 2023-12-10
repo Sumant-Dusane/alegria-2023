@@ -23,10 +23,11 @@ const Landing = () => {
     if(id == 'universe2') setUniverseName('Pixel')
     if(id == 'universe3') setUniverseName('Marvel')
     if(id == 'universe4') setUniverseName('Anime')
-
-    const audio = audioRef.current;  
-    audio.play();
   }, [universeName])
+
+  useEffect(() => {
+    audioRef.current.play();
+  }, [audioRef])
   return (
     <div className="landing">
       <Hero landingGsapTimeline={landingGsapTimeline} />

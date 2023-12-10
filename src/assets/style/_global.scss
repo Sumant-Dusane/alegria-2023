@@ -1,20 +1,36 @@
 #universe1 {
     font-family: $fontFamily--universe1;
     transition: $transitionGeneric;
+
+    h1 {
+        font-size: $fontSize-xxlarge;
+    }
 }
 #universe2 {
     font-family: $fontFamily--universe2;
     transition: $transitionGeneric;
+
+    h1 {
+        font-size: $fontSize-xxlarge;
+    }
 }
 #universe3 {
     font-family: $fontFamily--universe3;
     transition: $transitionGeneric;
 }
 #universe4 {
-    font-family: $fontFamily--universe4;
+    font-family: $fontFamily--universe6;
     transition: $transitionGeneric;
+
+    h1 {
+        font-size: $fontSize-xxlarge;
+    }
 }
-#universe4 {
-    font-family: $fontFamily--universe4;
+#universe5 {
+    font-family: $fontFamily--universe5;
     transition: $transitionGeneric;
+    
+    h1 {
+        font-size: $fontSize-xxlarge;
+    }
 }

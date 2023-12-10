@@ -17,18 +17,18 @@ const Hero = ({ landingGsapTimeline }) => {
 
         const scene = new THREE.Scene();
         const renderer = new THREE.WebGLRenderer({ antialias: true, canvas: heroRef.current, alpha: true });
-        const camera = new THREE.PerspectiveCamera(75, deviceWidth / deviceHeight, 0.000001, 122);
+        const camera = new THREE.PerspectiveCamera(75, deviceWidth / deviceHeight, 0.000001, 140);
 
         const controls = new OrbitControls(camera, heroRef.current);
         controls.enableDamping = true;
         controls.enablePan = false;
         controls.zoomSpeed = 0.15;
-        controls.maxDistance = 122;
+        controls.maxDistance = 140;
         controls.enableRotate = false;
 
         camera.position.x = 0;
         camera.position.y = 0;
-        camera.position.z = 122;
+        camera.position.z = 140;
         camera.lookAt(scene.position);
 
 
@@ -394,11 +394,19 @@ const Hero = ({ landingGsapTimeline }) => {
         if (document.body.id === `universe${index}`) return
         document.body.id = `universe${index}`;
     }
+
+    const escapeSpace = () => {
+        window.scrollTo({
+            top: window.innerHeight,
+            behavior: 'smooth'
+        })
+    }
     return (
         <div className="hero">
             <CustomCursor />
+            <button onClick={escapeSpace} className="hero__spaceship"></button>
             <div className="hero__content">
-                <h1>ALEGRIA</h1>
+                <h1>ALEGRIA: Festival Of Joy</h1>
             </div>
             <canvas ref={heroRef} ></canvas>
             <video

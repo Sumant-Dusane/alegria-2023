@@ -7,7 +7,7 @@
     overflow: hidden;
 
     &__title {
-        @include element-position(absolute, 32px, 0, unset, unset);
+        @include element-position(absolute, 7.25rem, 0, unset, unset);
         width: max-content;
         font-weight: bold;
         background-color: $wheat;

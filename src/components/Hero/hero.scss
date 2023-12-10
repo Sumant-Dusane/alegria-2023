@@ -12,14 +12,33 @@
         @include element-position(absolute, 0, 0, 0, 0);
         z-index: 1;
     }
+
+    &__spaceship {
+        cursor: pointer;
+        @include element-position(absolute, 10%, 16px, unset, unset);
+        width: 100px;
+        height: 100px;
+        z-index: 20;
+        background: url('../../assets/images/portal-btn.png') no-repeat center center;
+        background-size: contain;
+
+        &:hover {
+            scale: 1.15
+        }
+    }
     
     &__content {
         @include element-position(absolute, 0, 0, 0, 0);
+        display: grid;
+        place-content: center;
         height: 100%;
         width: 100%;
         margin: $spacer3x;
-        padding-top: 80px;
         z-index: 2;
         pointer-events: none;
+
+        h1 {
+            font-size: $fontSize-xlarge;
+        }
     }
 }

@@ -10,9 +10,11 @@
     height: 80px;
     z-index: 99;
     padding: 0 $spacer2x;
+    transition: $transitionGeneric;
 
-    &._active {
-        background-color: transparentize($color: $white, $amount: 0.5);
+    &.active {
+        background-color: transparentize($color: $pink, $amount: 0.25);
+        border: 1px solid $white;
     }
 
     &__navs {

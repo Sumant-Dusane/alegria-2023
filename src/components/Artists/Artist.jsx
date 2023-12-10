@@ -13,15 +13,6 @@ const Artist = ({ landingGsapTimeline }) => {
     scrub: true
   }
 
-  const ArtistCarouselScrollTriggerConfig = {
-    trigger: '.artist',
-    start: 'center+=100 center',
-    end: 'bottom center+=100',
-    scrub: true,
-    markers: true,
-    pin: true
-  }
-
   useEffect(() => {
     landingGsapTimeline.to('.artist__title', {
       x: '100%',
