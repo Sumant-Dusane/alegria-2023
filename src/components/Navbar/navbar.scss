@@ -4,93 +4,39 @@
 @import "./../../assets/style/flex";
 
 .navbar {
-    @include element-position(fixed, 0, 0, unset, 0);
+    @include element-position(fixed, 1rem, 1rem, unset, 1rem);
     @include flex(row, center, space-between, 0);
+    border-radius: $borderRadius-regular;
     height: 80px;
     z-index: 99;
     padding: 0 $spacer2x;
+    transition: $transitionGeneric;
+
+    &:not(.active) {
+        cursor: none;
+        
+        & *{
+            cursor: none;
+        }
+    }
+    
+
+    &.active {
+        background-color: transparentize($color: $pink, $amount: 0.25);
+        border: 1px solid $white;
+    }
 
     &__navs {
         @include flex(row, center, center, $spacer2x);
-        color: $white;
         font-weight: 200;
         letter-spacing: 2px;
-    }
 
-    &__planet-selector {
-
-        img {
-            height: 50px;
-            width: 50px;
-            object-fit: contain;
-            aspect-ratio: 2/2;
+        li {
             transition: $transitionGeneric;
-        }
-
-
-        > button {
-            position: relative;
-            height: 100%;
-            width: 100%;
-
-            img {
-                border-radius: $borderRadius-rounded;
-                overflow: hidden;
-                animation: revolve 50000ms infinite linear;
-            }
-
-            &::before {
-                @include sudo-fill("", absolute, unset, -16px, 16px, unset);
-                width: 15px;
-                height: 15px;
-                background: url('../../assets/images/caret.svg') no-repeat center center;
-                background-size: contain;
-            }
-        }
-
-        &__content {
-            @include element-position(absolute, 3rem, 1.5rem, unset, unset);
-            width: 300px;
-            max-height: 0;
-            min-height: 0;
-            overflow: hidden;
-            border-radius: $borderRadius-small;
-            background-color: transparentize($color: $black, $amount: 0.75);
-            transition: all 300ms ease-in-out;
-
-            li {
-                height: max-content;
-                width: 100%;
-                overflow: hidden;
-                border-radius: $borderRadius-rounded;
-
-                button {
-                    @include flex(row, center, flex-start, $spacer1_2);
-                    color: $white;
-                    font-weight: 500;
-                    width: 100%;
-                    padding: $spacer;
-
-                    &:hover {
-                        img {
-                            scale: 1.05;
-                        }
-                    }
-                }
-
-            }
-
-            &.show {
-                max-height: 100rem;
-                overflow-y: auto;
-            }
-        }
-
-        &:hover, &:focus-visible {
-            .navbar__planet-selector__content {
-                max-height: 100rem;
-                overflow-y: auto;
+            &:hover {
+                text-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
             }
         }
     }
+
 }

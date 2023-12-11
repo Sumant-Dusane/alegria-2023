@@ -1,0 +1,81 @@
+#universe1 {
+    font-family: $fontFamily--universe1;
+    transition: $transitionGeneric;
+
+    h1 {
+        font-size: $fontSize-large;
+        text-align: center;
+        @media screen and (min-width: 769px) {
+            font-size: $fontSize-xxlarge;
+            text-align: start;
+        }
+    }
+
+    .custom-cursor {
+        background: url('../../assets/images/cursor-default.png') no-repeat center center;
+        background-size: contain;
+    }
+}
+#universe2 {
+    font-family: $fontFamily--universe2;
+    transition: $transitionGeneric;
+
+    h1 {
+        font-size: $fontSize-large;
+        text-align: center;
+        @media screen and (min-width: 769px) {
+            font-size: $fontSize-xxlarge;
+            text-align: start;
+        }
+    }
+
+    .custom-cursor {
+        background: url('../../assets/images/cursor-pixel.png') no-repeat center center;
+        background-size: contain;
+    }
+}
+#universe3 {
+    font-family: $fontFamily--universe3;
+    transition: $transitionGeneric;
+    
+    .custom-cursor {
+        background: url('../../assets/images/cursor.png') no-repeat center center;
+        background-size: contain;
+    }
+}
+#universe4 {
+    font-family: $fontFamily--universe6;
+    transition: $transitionGeneric;
+
+    h1 {
+        font-size: $fontSize-large;
+        text-align: center;
+        @media screen and (min-width: 769px) {
+            font-size: $fontSize-xxlarge;
+            text-align: start;
+        }
+    }
+
+    .custom-cursor {
+        background: url('../../assets/images/cursor-anime.png') no-repeat center center;
+        background-size: contain;
+    }
+}
+#universe5 {
+    font-family: $fontFamily--universe5;
+    transition: $transitionGeneric;
+    
+    h1 {
+        font-size: $fontSize-large;
+        text-align: center;
+        @media screen and (min-width: 769px) {
+            font-size: $fontSize-xxlarge;
+            text-align: start;
+        }
+    }
+
+    .custom-cursor {
+        background: url('../../assets/images/cursor-future.png') no-repeat center center;
+        background-size: contain;
+    }
+}

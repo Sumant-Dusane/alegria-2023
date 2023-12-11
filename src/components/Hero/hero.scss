@@ -1,0 +1,45 @@
+@import "../../assets/style/variables";
+@import "../../assets/style/sudo";
+
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    
+    * {
+        cursor: none;
+    }
+    
+    canvas {
+        @include element-position(absolute, 0, 0, 0, 0);
+        z-index: 1;
+    }
+
+    &__spaceship {
+        @include element-position(absolute, 10%, 16px, unset, unset);
+        width: 150px;
+        height: 150px;
+        z-index: 20;
+        background: url('../../assets/images/spaceship.png') no-repeat center center;
+        background-size: contain;
+
+        &:hover {
+            scale: 1.15
+        }
+    }
+    
+    &__content {
+        @include element-position(absolute, 0, 0, 0, 0);
+        display: grid;
+        place-content: center;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+        pointer-events: none;
+
+        h1 {
+            font-size: $fontSize-xlarge;
+        }
+    }
+}

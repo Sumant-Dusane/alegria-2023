@@ -1,0 +1,14 @@
+@import "../../assets/style/variables";
+@import "../../assets/style/sudo";
+
+.custom-cursor {
+    @include element-position(absolute, 0, unset, unset, 0);
+    height: 350px;
+    width: 350px;
+    z-index: 2;
+    pointer-events: none;
+
+    @media screen and (max-width: 768px){
+        display: none;
+    }
+}

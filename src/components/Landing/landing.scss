@@ -1,0 +1,33 @@
+@import "../../assets/style/variables";
+
+.landing {
+    height: 100%;
+
+    .universe {
+        height: 100vh;
+        border-top: 1px solid $stroke;
+        text-align: center;
+        padding-top: calc(80px + $spacer2x);
+
+        &__title {
+            span {
+                display: block;
+                width: max-content;
+                padding: $spacer;
+                color: $white;
+                margin: 0 auto;
+                font-weight: bolder;
+                color: $purple;
+                background-color: $wheat;
+            }
+        }
+
+        &__about {
+            margin: $spacer2x auto;
+            padding: $spacer3x;
+            border-radius: $borderRadius-regular;
+            background-color: $stroke;
+            width: 50%;
+        }
+    }
+}

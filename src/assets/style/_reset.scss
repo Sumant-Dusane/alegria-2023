@@ -33,12 +33,11 @@ html, body {
 }
 
 body {
-    font-family: $fontFamily;
+    color: $white;
+    background-color: $blue;
     font-size: $fontSize-base;
     text-rendering: geometricPrecision;
     -webkit-font-smoothing: antialiased;
-    height: 100vh;
-    overflow: hidden;
 }
 
 button {
@@ -49,7 +48,7 @@ button {
 }
 
 a {
-    color: $white;
+    color: inherit;
     text-decoration: none;
 }
 
