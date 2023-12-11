@@ -5,7 +5,8 @@
     @include element-position(absolute, 0, unset, unset, 0);
     height: 350px;
     width: 350px;
-    z-index: 99;
+    z-index: 2;
+    pointer-events: none;
     background: url('../../assets/images/cursor.png') no-repeat center center;
     background-size: contain;
 }

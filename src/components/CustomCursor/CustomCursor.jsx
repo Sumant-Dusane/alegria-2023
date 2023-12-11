@@ -17,7 +17,7 @@ const CustomCursor = () => {
     const TrackMouse = (e) => {
         const width = cursorRef.current.clientWidth;
         const height = cursorRef.current.clientHeight;
-        cursorRef.current.style.transform = `translate(${e.clientX - width}px, ${e.clientY - height}px)`
+        cursorRef.current.style.transform = `translate(${e.clientX - width + 150}px, ${e.clientY - height + 200}px)`
     }
     return (
         <div className="custom-cursor" ref={cursorRef}>
