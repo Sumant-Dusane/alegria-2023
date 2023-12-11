@@ -14,11 +14,16 @@ gsap.registerPlugin(ScrollTrigger);
 const Landing = () => {
   const landingGsapTimeline = gsap.timeline();
   const audioRef = useRef(null);
+  const audioRef1 = useRef(null);
   
   useEffect(() => {
     audioRef.current.volume = 0.3;
     audioRef.current.play();
-  })
+
+    setTimeout(() => {
+      audioRef1.current.play();
+    }, 5000)
+  }, [])
 
   return (
     <div className="landing">
@@ -32,6 +37,9 @@ const Landing = () => {
       <Artist landingGsapTimeline={landingGsapTimeline} />
       <audio ref={audioRef} autoPlay >
         <source src="/static/intro-sfx.mp3" type="audio/mp3" />
+      </audio>
+      <audio ref={audioRef1} autoPlay >
+        <source src="/static/bg-sfx.mp3" type="audio/mp3" />
       </audio>
     </div>
   )

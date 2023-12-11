@@ -27,6 +27,17 @@
         &:hover {
             scale: 1.15
         }
+
+
+        &::before {
+            @include sudo-fill('Explore!', absolute, 90%, 16px, unset, unset);
+            width: 100px;
+            height: max-content;
+            padding: $spacer;
+            border-radius: $borderRadius-regular;
+            border-top-left-radius: 0;
+            background-color: $white
+        }
     }
     
     &__content {
