@@ -18,8 +18,8 @@
 
     &__spaceship {
         @include element-position(absolute, 10%, 16px, unset, unset);
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
         z-index: 20;
         background: url('../../assets/images/spaceship.png') no-repeat center center;
         background-size: contain;

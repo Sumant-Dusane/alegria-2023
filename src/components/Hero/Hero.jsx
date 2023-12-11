@@ -341,19 +341,19 @@ const Hero = ({ landingGsapTimeline }) => {
             */
 
             if (distFromCenter >= AFromCenter) {
-                scene.background = new THREE.Color('#164C93')
+                scene.background = new THREE.Color('#07062C')
                 changeUniverse(1);
             } else if (distFromCenter >= BFromCenter && distFromCenter < AFromCenter) {
-                scene.background = new THREE.Color('#16427A')
+                scene.background = new THREE.Color('#0D2F07')
                 changeUniverse(2);
             } else if (distFromCenter >= CFromCenter && distFromCenter < BFromCenter) {
-                scene.background = new THREE.Color('#153155')
+                scene.background = new THREE.Color('#4B1111')
                 changeUniverse(3);
             } else if (distFromCenter >= DFromCenter && distFromCenter < CFromCenter) {
-                scene.background = new THREE.Color('#192D46')
+                scene.background = new THREE.Color('#480857')
                 changeUniverse(4);
             } else if (distFromCenter >= EFromCenter && distFromCenter < DFromCenter) {
-                scene.background = new THREE.Color('#13181E')
+                scene.background = new THREE.Color('#0D4A47')
                 changeUniverse(5);
             }
         }
