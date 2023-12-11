@@ -7,6 +7,8 @@
     width: 350px;
     z-index: 2;
     pointer-events: none;
-    background: url('../../assets/images/cursor.png') no-repeat center center;
-    background-size: contain;
+
+    @media screen and (max-width: 768px){
+        display: none;
+    }
 }

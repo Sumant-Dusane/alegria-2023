@@ -6,6 +6,7 @@ import "./customcursor.scss";
 const CustomCursor = () => {
     const cursorRef = useRef(null);
     useEffect(() => {
+        if (!cursorRef.current) return
         document.addEventListener('mouseenter', () => {
             cursorRef.current.style.display = 'block'
         })
@@ -20,7 +21,7 @@ const CustomCursor = () => {
         cursorRef.current.style.transform = `translate(${e.clientX - width + 150}px, ${e.clientY - height + 200}px)`
     }
     return (
-        <div className="custom-cursor" ref={cursorRef}>
+        <div className={`custom-cursor`} ref={cursorRef}>
         </div>
     )
 }

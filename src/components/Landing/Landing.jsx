@@ -13,17 +13,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Landing = () => {
   const landingGsapTimeline = gsap.timeline();
-  const [universeName, setUniverseName] = useState(); 
   const audioRef = useRef(null);
 
-
-  useEffect(() => {
-    const id = document.body.id;
-    if(id == 'universe1') setUniverseName('Real')
-    if(id == 'universe2') setUniverseName('Pixel')
-    if(id == 'universe3') setUniverseName('Marvel')
-    if(id == 'universe4') setUniverseName('Anime')
-  }, [universeName])
 
   useEffect(() => {
     audioRef.current.play();
@@ -32,8 +23,10 @@ const Landing = () => {
     <div className="landing">
       <Hero landingGsapTimeline={landingGsapTimeline} />
       <div className="universe">
-        <div className="universe__title h2">Welcome to the <br /> <span>{universeName}</span> World</div>
-        <p className="universe__about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime aliquam deleniti quas asperiores non? Nesciunt explicabo laborum necessitatibus omnis consequuntur similique magni voluptatem, suscipit laudantium? Nam incidunt aperiam dicta nisi?</p>
+        <div className="universe__title h2">Welcome to the <br /> <span>Multiverse</span></div>
+        <p className="universe__about">
+        Embark on an odyssey across the Multiverse, where the essence of Alegria converges into a cosmic symphony of joy and creativity
+        </p>
       </div>
       <Artist landingGsapTimeline={landingGsapTimeline} />
       <audio ref={audioRef} muted autoPlay loop>

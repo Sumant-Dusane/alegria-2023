@@ -4,7 +4,6 @@ import "./artist.scss";
 import Yoyo from "../../assets/images/honey-singh.png";
 import Image from "next/image";
 import { useEffect } from "react";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const Artist = ({ landingGsapTimeline }) => {
   const ArtistScrollTriggerConfig = {

@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./hero.scss";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import * as THREE from "three";
@@ -24,6 +24,7 @@ const Hero = ({ landingGsapTimeline }) => {
         controls.enablePan = false;
         controls.zoomSpeed = 0.15;
         controls.maxDistance = 140;
+        controls.minDistance = 10;
         controls.enableRotate = false;
 
         camera.position.x = 0;
@@ -359,7 +360,6 @@ const Hero = ({ landingGsapTimeline }) => {
         controls.addEventListener('change', handleGlobalState)
 
         const animate = () => {
-            // planetAMaterial.uniforms.time.value += 0.05;
             window.requestAnimationFrame(animate);
             controls.update();
             renderer.render(scene, camera);

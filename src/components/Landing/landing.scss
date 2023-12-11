@@ -11,6 +11,12 @@
 
         &__title {
             span {
+                display: block;
+                width: max-content;
+                padding: $spacer;
+                color: $white;
+                margin: 0 auto;
+                font-weight: bolder;
                 color: $purple;
                 background-color: $wheat;
             }
